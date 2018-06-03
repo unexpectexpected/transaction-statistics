@@ -43,7 +43,7 @@ public class TransactionsProcessor {
     public void refreshTransactions() {
 
         synchronized (transactionsList) {
-            transactionsList = transactionsList.stream().filter(this::isTransactionTimeValid).collect(Collectors.toList());
+            transactionsList = transactionsList.stream().filter(this::isTransactionTimeValid).collect(Collectors.toCollection(LinkedList::new));
         }
         statisticsBuilder.calculate(transactionsList);
     }
