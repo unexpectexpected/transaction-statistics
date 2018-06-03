@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.unexpectexpected.n26</groupId>
+    <artifactId>transactions-statistics</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>transactions-rest-api</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <name>Transaction Statistics Test Task</name>
+    <description>The Maven pom that serves as aggregator for Transaction Statistics Rest API Projects.</description>
+
+    <properties>
+        <mainClass>com.unexpectexpected.n26.rest.boot.Application</mainClass>
+        <deliverablesDir>../statistics/deliverables</deliverablesDir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <junit.verison>4.12</junit.verison>
+        <mockito.version>1.9.5</mockito.version>
+        <lombok.version>1.16.20</lombok.version>
+        <spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+        <maven.compiler.version>3.1</maven.compiler.version>
+        <spring.version>5.0.6.RELEASE</spring.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>build-all</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>transactions-rest-api</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <developers>
+        <developer>
+            <name>Alexander Gogilchyn</name>
+            <email>o.gogilchyn@gmail.com</email>
+        </developer>
+    </developers>
+</project>
